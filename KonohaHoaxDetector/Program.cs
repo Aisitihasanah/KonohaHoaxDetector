@@ -71,12 +71,12 @@ namespace KonohaHoaxDetector
             Console.WriteLine($"LogLoss: {metrics.LogLoss:F4}");
             Console.WriteLine("\nModel telah selesai dilatih dan dievaluasi\n");
 
-            // 6️⃣ Simpan Model
+            // 6️ Simpan Model
             string modelPath = "model_hoax.zip";
             mlContext.Model.Save(model, trainData.Schema, modelPath);
             Console.WriteLine($"Model disimpan ke: {modelPath}\n");
 
-            // 7️⃣ Contoh Prediksi
+            // 7️ Contoh Prediksi
             Console.WriteLine("5. Contoh Prediksi Berita Baru...");
             var predictionEngine = mlContext.Model.CreatePredictionEngine<NewsData, NewsPrediction>(model);
 
